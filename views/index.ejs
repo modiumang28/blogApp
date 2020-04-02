@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+
+<h1>
+	All the blogs are displayed here!
+</h1>
+
+
+<% blogs.forEach(function(blog){ %>
+	<h4>
+		<%= blog.title %>
+	</h4>
+	<img src="<%= blog.image %>">
+	<p><%= blog.body.substring(0, 100) %>.......</p>
+	<p>
+		<%= blog.date %>
+	</p>
+	<a href="/blogs/<%= blog._id %>/edit" class="ui inverted orange small button">Update</a>
+	<a href="/blogs/<%= blog._id %>" class="ui red basic button">Read More!</a>
+<% }); %>
+
+<%- include("partials/footer") %>
